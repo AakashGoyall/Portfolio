@@ -1,0 +1,24 @@
+[
+    {
+        "id": 3,
+        "img": "/assets/Weather.jpg",
+        "name": "Weather",
+        "url": "https://weather-applatest.vercel.app/",
+        "description": "A responsive weather web app using HTML, CSS, JavaScript, API integration, and speech functionality for city input."
+    },
+    {
+        "id": 2,
+        "img": "/assets/Todo.jpg",
+        "name": "Todo List",
+        "url": "https://to-do-listmaker.vercel.app/",
+        "description": "A responsive todo web app using React and Tailwind CSS featuring task management and a clean user interface."
+    },
+    {
+        "id": 1,
+        "img": "/assets/Calculator.jpg",
+        "name": "Calculator",
+        "url": "https://calculator-foryou.vercel.app/",
+        "description": "A responsive React + Tailwind CSS calculator app with basic operations and a toggle for dark and light themes."
+    }
+    
+]

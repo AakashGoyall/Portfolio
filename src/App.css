@@ -1,0 +1,86 @@
+* {
+  font-family: "montserrat";
+  color: white;
+}
+
+::selection {
+  background-color: #00ffff;
+  color: #020f1f;
+}
+
+body {
+  user-select: none;
+}
+
+.selectable {
+  user-select: text;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+i {
+  color: #00ffff;
+}
+
+p {
+  color: #dddddd;
+}
+
+.input {
+  padding: 5px 7px;
+  border: 1px solid rgb(195, 194, 194);
+  background-color: transparent;
+  outline: none;
+  /* border: none; */
+}
+
+.input:focus {
+  box-shadow: 0px 0px 10px #00ffff;
+}
+
+button {
+  outline: none;
+}
+
+.img {
+  /* filter: drop-shadow(0px 0px 30px #00FFFF);
+    border: 2px solid white;
+    padding: 10px;
+    width: 300px;
+    */
+  border: 3px solid white;
+  margin: auto;
+  border-radius: 50%;
+  padding: 10px;
+  width: 330px;
+  aspect-ratio: 1;
+  filter: drop-shadow(0px 0px 70px #00ffff);
+  -webkit-filter: drop-shadow(0px 0px 70px #00ffff);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.active {
+  color: #00ffff;
+}
+
+progress {
+  height: 10px;
+  appearance: none; /* Reset default styles */
+}
+
+progress::-webkit-progress-value {
+  background-color: #00ffff; /* Green color for progress */
+}
+
+.nav-link {
+  flex-direction: column;
+  width: 100%;
+  padding: 16px;
+  background: #0c1827;
+  z-index: 9999;
+}
