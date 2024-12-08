@@ -1,9 +1,12 @@
 import Heading from "../components/Heading";
 import TestimonialExpertise from "../components/TestimonialExpertise";
+import {useTheme} from "../context/Theme"
+
 
 const Testimonial = () => {
+  const {bgChange} = useTheme();
   return (
-    <section className="bg-[#020F1F] md:py-3 py-7 min-h-[100dvh] max-h-[100%] px-7">
+    <section className={`${bgChange} md:py-3 py-7 min-h-[100dvh] max-h-[100%] px-7`}>
       <div className="mx-auto lg:w-[80%]">
         <div className="text-center md:mt-16 mb-12 font-semibold">
           <Heading subHeading="Why Choose Me" mainHeading="My Skills Area" />

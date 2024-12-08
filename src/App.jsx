@@ -9,10 +9,12 @@ import Home from "./pages/Home";
 import Loader from "./components/Loader";
 import Project from "./pages/Project";
 import Testimonial from "./pages/Testimonial";
+import ThemeProvider from "./context/Theme"
 
-function App() {
+const App =()=> {
   return (
     <>
+    <ThemeProvider>
     <Loader />
       <BrowserRouter>
         <Header />
@@ -26,6 +28,7 @@ function App() {
           <Route path="/*" element={<Error />} />
         </Routes>
       </BrowserRouter>
+      </ThemeProvider>
     </>
   );
 }

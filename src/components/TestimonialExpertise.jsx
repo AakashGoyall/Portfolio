@@ -1,7 +1,9 @@
 import {useState, useEffect} from "react";
+import { useTheme } from "../context/Theme";
 
 const TestimonialExpertise = ({title, percentage}) => {
   const [isValue, setIsValue] = useState(0);
+  const {textChange, isDark} = useTheme();
 
   useEffect(() => {
       if (percentage >= isValue) {
@@ -18,10 +20,10 @@ const TestimonialExpertise = ({title, percentage}) => {
     <>
       <div>
         <div className="flex justify-between md:pr-[5%]">
-          <h5 className="font-bold">{title}</h5>
-          <h6 className="font-bold">{percentage}%</h6>
+          <h5 className={`font-bold ${textChange}`}>{title}</h5>
+          <h6 className={`font-bold ${textChange}`}>{percentage}%</h6>
         </div>
-        <progress className="md:w-[95%] w-[100%] bg-[#00ffff]" value={isValue} max="100"></progress>
+        <progress className={`${isDark? "progress-dark": "progress-light"} md:w-[95%] w-[100%]`} value={isValue} max="100"></progress>
       </div>
     </>
   );

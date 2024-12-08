@@ -1,8 +1,10 @@
 import {useState} from "react";
 import Heading from "../components/Heading";
 import ContactSources from "../components/ContactSources";
+import {useTheme} from "../context/Theme"
 
 const Contact = () => {
+  const {bgChange, uniqueColor, blackToWhite, textChange,isDark} = useTheme();
   const apiKey = import.meta.env.VITE_FORMSPREE_API_KEY;
   const [data, setData] = useState({
     username: "",
@@ -26,7 +28,7 @@ const Contact = () => {
   const phone = "tel:8700275695";
 
   return (
-    <section className="bg-[#020F1F] md:py-3 py-7 min-h-[100dvh] max-h-[100%] px-7">
+    <section className={`bg-[#020F1F] md:py-3 py-7 min-h-[100dvh] max-h-[100%] px-7 ${bgChange}`}>
       <div className="mx-auto lg:w-[80%]">
         <div className="text-center md:mt-12  font-semibold mb-10">
           <Heading subHeading="Get in Touch" mainHeading="Contact Me" />
@@ -50,10 +52,12 @@ const Contact = () => {
                     required
                     onChange={handleInput}
                     title="Name"
+                  style= {{boxShadow : isDark? undefined: "0px 0px 10px rgba(0, 0, 0, 0.3)"}}
+
                     value= {data.username}
                     placeholder="Name"
                     name="username"
-                    className="input md:w-[48%]"
+                    className={`${textChange} input md:w-[48%]`}
                   />
                   <input
                     type="email"
@@ -63,9 +67,11 @@ const Contact = () => {
                     required
                     title="Email"
                     onChange={handleInput}
+                   style= {{boxShadow : isDark? undefined: "0px 0px 10px rgba(0, 0, 0, 0.3)"}}
+
                     placeholder="Email"
                     name="email"
-                    className="input md:w-[48%]"
+                    className= {`${textChange} input md:w-[48%]`}
                   />
                 </div>
                 <input
@@ -78,25 +84,27 @@ const Contact = () => {
                   required
                   placeholder="Subject"
                   name="title"
-                  className="input"
+                  style= {{boxShadow : isDark? undefined: "0px 0px 10px rgba(0, 0, 0, 0.3)"}}
+                  className={`${textChange} input`}
                 />
                 <textarea
                   name="message"
                   id="message"
                   autoComplete="off"
                   title="Message"
-                  className="input"
+                  className={`${textChange} input`}
                   onChange={handleInput}
                   value= {data.message}
                   placeholder="Message"
                   cols="30"
+                  style= {{boxShadow : isDark? undefined: "0px 0px 10px rgba(0, 0, 0, 0.3)"}}
                   rows="7"
                 ></textarea>
               </div>
 
-              <button
+              <button style={{backgroundColor: uniqueColor, color: blackToWhite}}
                 type="submit"
-                className="rounded-3xl py-[10px] px-5 sm:px-5 font-bold bg-[#00FFFF] hover:bg-[#339f9f] text-[#020F1F]"
+                className="rounded-3xl py-[10px] px-5 sm:px-5 font-bold hover:bg-[#339f9f]"
               >
                 Send Message
               </button>

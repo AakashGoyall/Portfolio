@@ -1,9 +1,9 @@
-const EducationBox = ({mainHeading, subHeading, date}) => {
+const EducationBox = ({mainHeading, subHeading, date, uniqueColor, textChange}) => {
     return(
-        <div className="border-l-2 border-[#00ffff] pl-3">
-                  <h3 className="font-bold selectable">{mainHeading}</h3>
-                  <p className="selectable">{subHeading}</p>
-                  <div className="text-[#00ffff] font-semibold mt-1"><i className="fa-solid fa-calendar-days"></i> {date}</div>
+        <div className="pl-3" style={{ borderLeft: `2px solid ${uniqueColor}` }}>
+                  <h3 className={`font-bold selectable ${textChange}`}>{mainHeading}</h3>
+                  <p className={`selectable ${textChange}`}>{subHeading}</p>
+                  <div className="font-semibold mt-1"  style={{color: uniqueColor}}><i  style={{color: uniqueColor}} className="fa-solid fa-calendar-days"></i> {date}</div>
                 </div>
     )
 }

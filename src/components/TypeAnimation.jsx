@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const TypeAnimation = ({data}) => {
+const TypeAnimation = ({data, uniqueColor}) => {
   const words = [...data];
   const [wordIndex, setWordIndex] = useState(0);
   const [text, setText] = useState("");
@@ -35,7 +35,7 @@ const TypeAnimation = ({data}) => {
 
   return (
     <>
-      <h2 className="text-[#00ffff] h-[30px] text-[25px] 2xl:text-[40px] 2xl:h-[50px]">{text}</h2>
+      <h2 className={`h-[30px] text-[25px] 2xl:text-[40px] 2xl:h-[50px]`} style={{color: uniqueColor}}>{text}</h2>
     </>
   );
 };

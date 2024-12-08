@@ -28,3 +28,4 @@ bun.lockb
 .env
 .vercel
 netlify.toml
+_redirects

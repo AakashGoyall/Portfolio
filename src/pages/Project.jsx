@@ -2,11 +2,13 @@ import { useState } from "react";
 import ProjectApi from "../api/projects.json";
 import Heading from "../components/Heading";
 import ProjectCards from "../components/ProjectCards";
+import {useTheme} from "../context/Theme"
 
 const Project = () => {
   const [searchValue, setSearchValue] = useState("");
   const [searchResult, setSearchResult] = useState("");
   const [hoveredId, setHoveredId] = useState(null);
+  const {bgChange, uniqueColor, blackToWhite, textChange, isDark} = useTheme();
 
   const addClass = (id) => {
     setHoveredId(id); // Set the hovered ID
@@ -36,7 +38,7 @@ const Project = () => {
   };
 
   return (
-    <section className="bg-[#020F1F] md:py-3 py-7 min-h-[100dvh] max-h-[100%] px-7">
+    <section className={`${bgChange} md:py-3 py-7 min-h-[100dvh] max-h-[100%] px-7`}>
       <div className="mx-auto lg:w-[80%]">
         <div className="text-center md:mt-16 mb-5 font-semibold">
           <Heading subHeading="My Portfolio" mainHeading="Recent Works" />
@@ -46,14 +48,16 @@ const Project = () => {
           <input
             type="text"
             placeholder="Search something..."
-            className="input pr-10"
+            style= {{boxShadow : isDark? undefined: "0px 0px 10px rgba(0, 0, 0, 0.3)"}}
+            className={`${textChange} input pr-10`}
             onChange={handleInput}
             value={searchValue}
             spellCheck="false"
           />
           <button
             onClick={handleFormSubmit}
-            className="text-[18px] p-[4.5px] absolute text-[#020F1F] hover:bg-[#339f9f] font-bold bg-[#00ffff]"
+            style={{background: uniqueColor, color: blackToWhite}}
+            className={`text-[18px] p-[4.5px] absolute hover:bg-[#339f9f] font-bold`}
           >
             Go
           </button>
